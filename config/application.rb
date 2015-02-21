@@ -32,5 +32,9 @@ module TDDExamples
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+    
+    # Following two lines to support directory structure created for integrating Grape
+    config.paths.add "app/api", glob: "**/*.rb"
+    config.autoload_paths += Dir["#{Rails.root}/app/api/*"]
   end
 end
